@@ -13,12 +13,17 @@ class SingleArticle extends Component {
     });
   }
 
-  
+  componentDidMount() {
+    console.log("Mounting");
+    this.getArticle();
+  }
 
-
-
-
-
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Updating single article')
+    if (prevProps.article_id !== this.props.article_id) {
+      this.getArticle();
+    }
+  }
 
   render() {
     return <div><h1>  ARTICLE</h1></div>;
