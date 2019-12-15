@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import SingleArticle from "./SingleArticle";
+import {Router} from '@reach/router'
 
 class ArticleList extends Component {
   state = {
@@ -19,14 +21,25 @@ class ArticleList extends Component {
     this.getArticles();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Updating')
+    if (prevProps.title !== this.props.title) {
+      this.getArticles();
+    }
+
+  }
+
+
   render() {
     console.log("Rendering");
     return (
       <div>
-        {this.state.articles.map(article => {
-          console.log(article);
+        {this.state.articles.map(article => {          
           return <ArticleCard key={article.article_id} {...article} />;
         })}
+        <Router>
+          <SingleArticle path=':article_id' />
+        </Router>
       </div>
     );
   }
