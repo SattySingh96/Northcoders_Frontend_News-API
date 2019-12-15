@@ -26,7 +26,6 @@ class ArticleList extends Component {
     if (prevProps.title !== this.props.title) {
       this.getArticles();
     }
-
   }
 
 
