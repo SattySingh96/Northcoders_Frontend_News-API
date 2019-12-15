@@ -26,7 +26,16 @@ class SingleArticle extends Component {
   }
 
   render() {
-    return <div><h1>  ARTICLE</h1></div>;
+    const {article_id, title, body, votes, topic, author, created_at, comment_count} = this.state.article;
+    return <div>
+      <h2>{article_id}.{title}</h2>
+      <h3>Author: {author}</h3>
+      <h3>Created: {created_at}</h3>
+      <h3>Votes: {votes}</h3>
+      <h3>Topic: {topic}</h3>
+      <p>{body}</p>
+      <h3>Comments: {comment_count}</h3>
+      </div>;
   }
 }
 
