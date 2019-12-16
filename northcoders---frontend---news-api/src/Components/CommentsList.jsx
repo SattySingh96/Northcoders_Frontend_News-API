@@ -3,6 +3,7 @@ import * as api from "../utils/api";
 import Loader from "./Loader";
 import ErrDisplayer from "./ErrDisplayer";
 import CommentCard from "../Components/CommentCard";
+import AddComment from "./AddComment";
 
 class CommentsList extends Component {
   state = {
@@ -38,6 +39,7 @@ class CommentsList extends Component {
     if (err) return <ErrDisplayer err />;
     return (
       <div>
+        <AddComment />
         {this.state.comments.map(comment => {
           return <CommentCard key={comment.comment_id} {...comment} />;
         })}

@@ -1,11 +1,11 @@
 import React from "react";
 
-const CommentCard = ({ comment_id, body }) => {
+const CommentCard = ({ comment_id, body, author, votes, created_at }) => {
   return (
     <article>
       <ul>
         <li>
-          <h4>{body}</h4>
+          Comment {comment_id} written by {author}: {body} Votes: {votes}
         </li>
       </ul>
     </article>
