@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import SingleArticle from "./SingleArticle";
-import {Router} from '@reach/router'
+import { Router } from "@reach/router";
 import Loader from "./Loader";
 
 class ArticleList extends Component {
@@ -12,8 +12,8 @@ class ArticleList extends Component {
   };
 
   getArticles = () => {
-    api.fetchAllArticles().then(articles => {     
-      this.setState({ articles, isLoading : false });
+    api.fetchAllArticles(this.props.topic).then(articles => {
+      this.setState({ articles, isLoading: false });
     });
   };
 
@@ -23,23 +23,22 @@ class ArticleList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('Updating')
+    console.log("Updating");
     if (prevProps.title !== this.props.title) {
       this.getArticles();
     }
   }
 
-
   render() {
     console.log("Rendering");
-    if (this.state.isLoading) return <Loader/>
+    if (this.state.isLoading) return <Loader />;
     return (
       <div>
-        {this.state.articles.map(article => {          
+        {this.state.articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}
         <Router>
-          <SingleArticle path=':article_id' />
+          <SingleArticle path=":article_id" />
         </Router>
       </div>
     );
