@@ -24,3 +24,11 @@ exports.fetchAllTopics = () => {
       return topics;
     });
 }
+
+exports.fetchArticleCommentsByArticleID = (article_id) => {
+  return axios
+    .get(`https://satnams-news-api.herokuapp.com/api/articles/${article_id}/comments`).then(({ data: { comments } }) => {
+      return comments;
+    });
+}
+

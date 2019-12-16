@@ -6,7 +6,8 @@ import ArticleList from './Components/ArticleList'
 import SingleArticle from './Components/SingleArticle'
 import TopicList from './Components/TopicList';
 import ErrDisplayer from './Components/ErrDisplayer';
-import SingleTopic from './Components/SingleTopic';
+import SingleArticleByTopic from './Components/SingleArticleByTopic';
+
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <ArticleList path='/articles/' />
         <ArticleList path='/articles/topic/:topic_slug' />
         <SingleArticle path='/articles/:article_id' />
-        <SingleTopic path='/articles' />
+        <SingleArticleByTopic path='/articles' />
         <ErrDisplayer default />
       </Router>
     </div>

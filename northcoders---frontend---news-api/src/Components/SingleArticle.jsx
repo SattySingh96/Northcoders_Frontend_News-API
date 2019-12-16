@@ -45,6 +45,7 @@ class SingleArticle extends Component {
       comment_count
     } = this.state.article;
     if (err) return <ErrDisplayer err />;
+
     return (
       <article>
         <h2>
