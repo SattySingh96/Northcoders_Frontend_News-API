@@ -1,6 +1,7 @@
 const axios = require('axios')
 
-exports.fetchAllArticles = (topic) => {
+exports.fetchAllArticles = topic => {
+  console.log('this one')
   return axios
     .get('https://satnams-news-api.herokuapp.com/api/articles', { params: { topic } })
     .then(({ data: { articles } }) => {

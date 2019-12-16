@@ -5,6 +5,8 @@ import { Router } from '@reach/router'
 import ArticleList from './Components/ArticleList'
 import SingleArticle from './Components/SingleArticle'
 import TopicList from './Components/TopicList';
+import ErrDisplayer from './Components/ErrDisplayer';
+import SingleTopic from './Components/SingleTopic';
 
 function App() {
   return (
@@ -12,10 +14,12 @@ function App() {
       <Header />
       <Router>
         <TopicList path='/topics/*' />
-        <ArticleList path='/articles/*' />
-        <SingleArticle path='/article/:article_id' />
+        <ArticleList path='/articles/' />
+        <ArticleList path='/articles/topic/:topic_slug' />
+        <SingleArticle path='/articles/:article_id' />
+        <SingleTopic path='/articles' />
+        <ErrDisplayer default />
       </Router>
-
     </div>
   );
 }

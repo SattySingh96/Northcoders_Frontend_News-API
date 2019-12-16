@@ -4,34 +4,40 @@ import ArticleCard from "./ArticleCard";
 import SingleArticle from "./SingleArticle";
 import { Router } from "@reach/router";
 import Loader from "./Loader";
+import ErrDisplayer from "./ErrDisplayer";
 
 class ArticleList extends Component {
   state = {
     articles: [],
-    isLoading: true
+    isLoading: true,
+    err: ""
   };
 
   getArticles = () => {
-    api.fetchAllArticles(this.props.topic).then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchAllArticles(this.props.topic_slug)
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(({ response: { data } }) => {
+        this.setState({ err: data.err, isLoading: false });
+      });
   };
 
   componentDidMount() {
-    console.log("Mounting");
     this.getArticles();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("Updating");
-    if (prevProps.title !== this.props.title) {
+    if (prevProps.topic_slug !== this.props.topic_slug) {
       this.getArticles();
     }
   }
 
   render() {
-    console.log("Rendering");
+    const { err } = this.state;
     if (this.state.isLoading) return <Loader />;
+    if (err) return <ErrDisplayer err />;
     return (
       <div>
         {this.state.articles.map(article => {
