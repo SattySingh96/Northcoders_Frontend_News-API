@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "@reach/router";
-import CommentCard from "./CommentCard";
 
 const ArticleCard = ({ article_id, title }) => {
   return (

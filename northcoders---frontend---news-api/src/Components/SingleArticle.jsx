@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import Loader from "./Loader";
 import ErrDisplayer from "./ErrDisplayer";
+import CommentsList from "./CommentsList";
 
 class SingleArticle extends Component {
   state = {
@@ -55,8 +56,9 @@ class SingleArticle extends Component {
         <h3>Created: {created_at}</h3>
         <h3>Votes: {votes}</h3>
         <h3>Topic: {topic}</h3>
-        <p>{body}</p>
+        <h2>{body}</h2>
         <h3>Comments: {comment_count}</h3>
+        <CommentsList article_id={article_id} />
       </article>
     );
   }

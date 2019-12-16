@@ -3,7 +3,11 @@ import React from "react";
 const CommentCard = ({ comment_id, body }) => {
   return (
     <article>
-      <h2>{body}</h2>
+      <ul>
+        <li>
+          <h4>{body}</h4>
+        </li>
+      </ul>
     </article>
   );
 };

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import Loader from "./Loader";
 import ErrDisplayer from "./ErrDisplayer";
+import CommentCard from "../Components/CommentCard";
 
 class CommentsList extends Component {
   state = {
