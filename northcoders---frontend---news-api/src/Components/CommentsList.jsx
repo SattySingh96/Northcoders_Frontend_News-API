@@ -39,7 +39,10 @@ class CommentsList extends Component {
     if (err) return <ErrDisplayer err />;
     return (
       <div>
-        <AddComment article_id={this.props.article_id} />
+        <AddComment
+          article_id={this.props.article_id}
+          getComments={this.getComments}
+        />
         {this.state.comments.map(comment => {
           return <CommentCard key={comment.comment_id} {...comment} />;
         })}

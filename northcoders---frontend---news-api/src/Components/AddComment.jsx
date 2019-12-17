@@ -8,19 +8,16 @@ class AddComment extends Component {
   };
 
   handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value }, () => {
-      console.log(this.state);
-    });
+    this.setState({ [target.name]: target.value }, () => {});
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("in handlesubmit");
     api
       .postNewComment(this.props.article_id, { ...this.state })
       .then(comment => {
-        console.log("in then of postnewComment");
         this.setState({ username: "", body: "" });
+        this.props.getComments();
       });
   };
 
