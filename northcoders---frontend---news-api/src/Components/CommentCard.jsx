@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteComment from "./DeleteComment";
+import Voter from "./Voter";
 
 const CommentCard = ({
   comment_id,
@@ -15,6 +16,7 @@ const CommentCard = ({
         <li>
           <strong>Comment written by {author}:</strong> {body} Votes: {votes}
           <DeleteComment comment_id={comment_id} getComments={getComments} />
+          <Voter />
         </li>
       </ul>
     </article>

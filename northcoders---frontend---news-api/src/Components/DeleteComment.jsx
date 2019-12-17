@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import * as api from "../utils/api";
 
 const DeleteComment = ({ comment_id, getComments }) => {

@@ -44,6 +44,12 @@ exports.deleteComment = (comment_id) => {
   return axios
     .delete(`https://satnams-news-api.herokuapp.com/api/comments/${comment_id}`)
     .then(() => {
-      console.log('deleted')
+    });
+}
+
+exports.patchVotes = (path, id, votes) => {
+  return axios
+    .patch(`https://satnams-news-api.herokuapp.com/api/${path}/${id}`, votes)
+    .then(() => {
     });
 }

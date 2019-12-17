@@ -3,6 +3,7 @@ import * as api from "../utils/api";
 import Loader from "./Loader";
 import ErrDisplayer from "./ErrDisplayer";
 import CommentsList from "./CommentsList";
+import Voter from "../Components/Voter";
 
 class SingleArticle extends Component {
   state = {
@@ -46,12 +47,12 @@ class SingleArticle extends Component {
       comment_count
     } = this.state.article;
     if (err) return <ErrDisplayer err />;
-
     return (
       <article>
         <h2>
           {article_id}.{title}
         </h2>
+        <Voter votes={votes} id={article_id} />
         <h3>Author: {author}</h3>
         <h3>Created: {created_at}</h3>
         <h3>Votes: {votes}</h3>
