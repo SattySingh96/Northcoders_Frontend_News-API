@@ -32,10 +32,13 @@ exports.fetchArticleCommentsByArticleID = (article_id) => {
     });
 }
 
-exports.postNewComment = (article_id, postBody) => {
+exports.postNewComment = (article_id, comment) => {
+  console.log(comment)
   return axios
-    .post(`https://satnams-news-api.herokuapp.com/api/articles/${article_id}/comments`, postBody)
+    .post(`https://satnams-news-api.herokuapp.com/api/articles/${article_id}/comments`, comment)
     .then(({ data: { comment } }) => {
+      console.log('in api func')
+
       return comment;
     });
 }
