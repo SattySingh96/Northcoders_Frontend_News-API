@@ -18,7 +18,8 @@ class CommentsList extends Component {
       .then(comments => {
         this.setState({ comments, isLoading: false });
       })
-      .catch(({ response: { data } }) => {
+      .catch(({ data }) => {
+        console.log(data);
         this.setState({ err: data.err, isLoading: false });
       });
   };
@@ -44,7 +45,13 @@ class CommentsList extends Component {
           getComments={this.getComments}
         />
         {this.state.comments.map(comment => {
-          return <CommentCard key={comment.comment_id} {...comment} />;
+          return (
+            <CommentCard
+              key={comment.comment_id}
+              getComments={this.getComments}
+              {...comment}
+            />
+          );
         })}
       </div>
     );

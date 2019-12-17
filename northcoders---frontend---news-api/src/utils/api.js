@@ -39,3 +39,11 @@ exports.postNewComment = (article_id, comment) => {
       return comment;
     });
 }
+
+exports.deleteComment = (comment_id) => {
+  return axios
+    .delete(`https://satnams-news-api.herokuapp.com/api/comments/${comment_id}`)
+    .then(() => {
+      console.log('deleted')
+    });
+}
