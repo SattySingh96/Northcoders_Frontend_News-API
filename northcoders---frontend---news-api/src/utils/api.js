@@ -26,8 +26,16 @@ exports.fetchAllTopics = () => {
 
 exports.fetchArticleCommentsByArticleID = (article_id) => {
   return axios
-    .get(`https://satnams-news-api.herokuapp.com/api/articles/${article_id}/comments`).then(({ data: { comments } }) => {
+    .get(`https://satnams-news-api.herokuapp.com/api/articles/${article_id}/comments`)
+    .then(({ data: { comments } }) => {
       return comments;
     });
 }
 
+exports.postNewComment = (article_id, postBody) => {
+  return axios
+    .post(`https://satnams-news-api.herokuapp.com/api/articles/${article_id}/comments`, postBody)
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+}

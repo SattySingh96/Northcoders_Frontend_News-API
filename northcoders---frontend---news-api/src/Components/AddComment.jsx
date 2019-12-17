@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 
 class AddComment extends Component {
+  state = {
+    author: "",
+    body: ""
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
+  handleSubmit = () => {};
+
   render() {
     return (
       <form>

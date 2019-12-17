@@ -5,7 +5,7 @@ const CommentCard = ({ comment_id, body, author, votes, created_at }) => {
     <article>
       <ul>
         <li>
-          Comment {comment_id} written by {author}: {body} Votes: {votes}
+          <strong>Comment written by {author}:</strong> {body} Votes: {votes}
         </li>
       </ul>
     </article>
