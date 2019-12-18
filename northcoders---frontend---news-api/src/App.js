@@ -7,6 +7,7 @@ import SingleArticle from './Components/SingleArticle'
 import TopicList from './Components/TopicList';
 import ErrDisplayer from './Components/ErrDisplayer';
 import ArticleListByTopic from './Components/ArticleListByTopic';
+import HomePage from './Components/HomePage';
 
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
     <div className="App">
       <Header username={this.state.username}/>     
       <Router>
+        <HomePage path='/'/>
         <TopicList path='/topics/*' />
         <ArticleList path='/articles/' />
         <ArticleList path='/articles/topic/:topic_slug' />
