@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 const ArticleCard = ({ article_id, title }) => {
   return (
-    <article>
+    <article className='ArticleCard'>
       <Link to={`/articles/${article_id}`}>
         <h2>{title}</h2>
       </Link>

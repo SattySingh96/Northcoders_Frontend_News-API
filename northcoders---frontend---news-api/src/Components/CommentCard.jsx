@@ -11,15 +11,15 @@ const CommentCard = ({
   getComments
 }) => {
   return (
-    <article>
+    <div id='CommentCard'>
       <ul>
         <li>
           <strong>Comment written by {author}:</strong> {body} Votes: {votes}
           <DeleteComment comment_id={comment_id} getComments={getComments} />
-          <Voter />
+          <Voter votes={votes} id={comment_id} />
         </li>
       </ul>
-    </article>
+    </div>
   );
 };
 

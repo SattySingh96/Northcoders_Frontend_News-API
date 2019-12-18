@@ -58,7 +58,7 @@ class SingleArticle extends Component {
         <h3>Votes: {votes}</h3>
         <h3>Topic: {topic}</h3>
         <h2>{body}</h2>
-        <h3>Comments: {comment_count}</h3>
+        <h3 >Comments: {comment_count}</h3>
         <CommentsList article_id={article_id} />
       </article>
     );

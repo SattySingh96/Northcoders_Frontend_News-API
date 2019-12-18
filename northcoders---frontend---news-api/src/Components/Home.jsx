@@ -3,9 +3,10 @@ import { Link } from "@reach/router";
 
 const Home = () => {
   return (
-    <div>
-      <Link to="/">
+    <div className='Home'>
+      <Link to="/articles">
         <img
+          id='Home'
           src="https://cdn-images-1.medium.com/max/184/1*LdnSztHVYhhd8K8EqlgCJQ@2x.png"
           alt="NC-Logo"
           height="70"

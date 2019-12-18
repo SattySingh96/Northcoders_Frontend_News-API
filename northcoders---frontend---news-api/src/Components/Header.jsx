@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <div>
+    <div className='Header'>
       <Home />
       <Nav />
     </div>

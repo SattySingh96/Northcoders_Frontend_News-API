@@ -10,15 +10,16 @@ class Voter extends Component {
 
   handleClick = event => {
     const { name } = event.target;
+    console.log(this.props.id, this.props.type)
     this.setState(currentState => {
       return {
         currentVote: currentState.currentVote + +name
       };
     });
-    api.patchVotes(name, this.props.id, this.props.votes).catch(err => {
+    api.patchVotes(name, this.props.id, name).catch(err => {
       this.setState(currentState => {
         return {
-          err: "Cannot vote",
+          err: "Cannot vote anymore",
           currentVote: currentState.currentVote - +name
         };
       });
@@ -29,12 +30,19 @@ class Voter extends Component {
     const { currentVote, err } = this.state;
     if (err) return <ErrDisplayer err={err} />;
     return (
-      <div>
-        <button onClick={this.handleClick} name="1" disabled={currentVote > 0}>
+      <div id='voter'> 
+        <button 
+        onClick={this.handleClick} 
+        name="1" 
+        disabled={currentVote > 0}
+        >
           +1
         </button>
         <h5>{this.props.votes + this.state.currentVote}</h5>
-        <button onClick={this.handleClick} name="-1" disabled={currentVote < 0}>
+        <button 
+        onClick={this.handleClick} 
+        name="-1" 
+        disabled={currentVote < 0}>
           -1
         </button>
       </div>
