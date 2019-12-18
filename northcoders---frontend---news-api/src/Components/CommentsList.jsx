@@ -43,6 +43,7 @@ class CommentsList extends Component {
         <AddComment
           article_id={this.props.article_id}
           getComments={this.getComments}
+          username={this.props.username}
         />
         {this.state.comments.map(comment => {
           return (

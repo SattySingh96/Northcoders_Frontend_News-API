@@ -3,7 +3,7 @@ import * as api from "../utils/api";
 
 class AddComment extends Component {
   state = {
-    username: "",
+    username: this.props.username,
     body: ""
   };
 
@@ -22,19 +22,10 @@ class AddComment extends Component {
   };
 
   render() {
-    const { username, body } = this.state;
+    const { body } = this.state;
     return (
       <div>
         <form>
-          <label>
-            User:
-            <input
-              type="text"
-              name="username"
-              onChange={this.handleChange}
-              value={username}              
-            ></input>
-          </label>
           <label>
             Comment:
             <input
