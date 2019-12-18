@@ -7,7 +7,6 @@ import SingleArticle from './Components/SingleArticle'
 import TopicList from './Components/TopicList';
 import ErrDisplayer from './Components/ErrDisplayer';
 import ArticleListByTopic from './Components/ArticleListByTopic';
-import { render } from '@testing-library/react';
 
 
 class App extends Component {

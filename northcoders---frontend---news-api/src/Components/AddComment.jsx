@@ -4,7 +4,7 @@ import * as api from "../utils/api";
 class AddComment extends Component {
   state = {
     username: this.props.username,
-    body: ""
+    body: ''
   };
 
   handleChange = ({ target }) => {

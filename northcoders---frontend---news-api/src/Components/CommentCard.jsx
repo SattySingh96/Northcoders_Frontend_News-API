@@ -8,7 +8,8 @@ const CommentCard = ({
   author,
   votes,
   created_at,
-  getComments
+  getComments,
+  username
 }) => {
   return (
     <div id='CommentCard'>
@@ -16,7 +17,12 @@ const CommentCard = ({
         <li>
           <strong>Comment written by {author}:</strong> {body} 
           <strong>Votes: {votes}</strong>
-          <DeleteComment comment_id={comment_id} getComments={getComments} />
+          <DeleteComment 
+          comment_id={comment_id} 
+          getComments={getComments}    
+          author={author}       
+          username={username}
+          />
           <Voter votes={votes} id={comment_id} type={'comments'} />
         </li>
       </ul>

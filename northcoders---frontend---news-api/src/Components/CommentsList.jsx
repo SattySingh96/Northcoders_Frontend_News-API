@@ -18,8 +18,7 @@ class CommentsList extends Component {
       .then(comments => {
         this.setState({ comments, isLoading: false });
       })
-      .catch(({ data }) => {
-        console.log(data);
+      .catch(({ data }) => {        
         this.setState({ err: data.err, isLoading: false });
       });
   };
@@ -41,15 +40,16 @@ class CommentsList extends Component {
     return (
       <div>
         <AddComment
-          article_id={this.props.article_id}
-          getComments={this.getComments}
-          username={this.props.username}
+          article_id = {this.props.article_id}
+          getComments = {this.getComments}
+          username = {this.props.username}
         />
         {this.state.comments.map(comment => {
           return (
             <CommentCard
-              key={comment.comment_id}
-              getComments={this.getComments}
+              key ={ comment.comment_id}
+              getComments = {this.getComments}    
+              username={this.props.username}         
               {...comment}
             />
           );
