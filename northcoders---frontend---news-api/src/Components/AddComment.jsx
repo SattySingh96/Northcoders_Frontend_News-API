@@ -16,7 +16,7 @@ class AddComment extends Component {
     api
       .postNewComment(this.props.article_id, { ...this.state })
       .then(comment => {
-        this.setState({ username: "", body: "" });
+        this.setState({ username: this.props.username, body: "" });
         this.props.getComments();
       });
   };

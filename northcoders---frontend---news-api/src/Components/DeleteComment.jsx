@@ -2,6 +2,7 @@ import React from "react";
 import * as api from "../utils/api";
 
 const DeleteComment = ({ comment_id, getComments }) => {
+
   const handleSubmit = event => {
     event.preventDefault();
     api.deleteComment(comment_id).then(() => {
