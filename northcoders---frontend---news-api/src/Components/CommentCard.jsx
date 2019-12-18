@@ -14,7 +14,8 @@ const CommentCard = ({
     <div id='CommentCard'>
       <ul>
         <li>
-          <strong>Comment written by {author}:</strong> {body} Votes: {votes}
+          <strong>Comment written by {author}:</strong> {body} 
+          <strong>Votes: {votes}</strong>
           <DeleteComment comment_id={comment_id} getComments={getComments} />
           <Voter votes={votes} id={comment_id} />
         </li>

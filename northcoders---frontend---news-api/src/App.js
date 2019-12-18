@@ -18,8 +18,7 @@ class App extends Component {
   render() {
     return (
     <div className="App">
-      Logged in as {this.state.username}
-      <Header />
+      <Header username={this.state.username}/>     
       <Router>
         <TopicList path='/topics/*' />
         <ArticleList path='/articles/' />

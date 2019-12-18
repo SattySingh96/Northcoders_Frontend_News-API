@@ -55,9 +55,9 @@ exports.deleteComment = (comment_id) => {
     });
 }
 
-exports.patchVotes = (path, id, votes) => {
+exports.patchVotes = (path, id, vote) => {
   return axios
-    .patch(`https://satnams-news-api.herokuapp.com/api/${path}/${id}`, votes)
+    .patch(`https://satnams-news-api.herokuapp.com/api/${path}/${id}`, {'inc_votes': vote})
     .then(({ data: { votes }} ) => {
       return votes
     });
