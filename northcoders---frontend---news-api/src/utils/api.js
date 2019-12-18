@@ -1,16 +1,8 @@
 const axios = require('axios')
 
-exports.fetchAllArticles = (topic, sort_by) => {
+exports.fetchAllArticles = (topic) => {
   return axios
     .get('https://satnams-news-api.herokuapp.com/api/articles', { params: { topic } })
-    .then(({ data: { articles } }) => {
-      return articles;
-    });
-}
-
-exports.fetchAllArticlesSortedBy = (sort_by) => {
-  return axios
-    .get('https://satnams-news-api.herokuapp.com/api/articles', { params: { sort_by } })
     .then(({ data: { articles } }) => {
       return articles;
     });
@@ -66,7 +58,8 @@ exports.deleteComment = (comment_id) => {
 exports.patchVotes = (path, id, votes) => {
   return axios
     .patch(`https://satnams-news-api.herokuapp.com/api/${path}/${id}`, votes)
-    .then(() => {
+    .then(({ data: { votes }} ) => {
+      return votes
     });
 }
 

@@ -10,13 +10,13 @@ class Voter extends Component {
 
   handleClick = event => {
     const { name } = event.target;
-    console.log(this.props.id, this.props.type)
+    console.log(this.props.id, 'articles', name)
     this.setState(currentState => {
       return {
         currentVote: currentState.currentVote + +name
       };
     });
-    api.patchVotes(name, this.props.id, name).catch(err => {
+    api.patchVotes('articles', this.props.id, name).catch(err => {
       this.setState(currentState => {
         return {
           err: "Cannot vote anymore",

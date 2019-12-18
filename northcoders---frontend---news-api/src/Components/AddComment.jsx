@@ -32,7 +32,7 @@ class AddComment extends Component {
               type="text"
               name="username"
               onChange={this.handleChange}
-              value={username}
+              value={username}              
             ></input>
           </label>
           <label>
@@ -41,7 +41,8 @@ class AddComment extends Component {
               type="text"
               name="body"
               onChange={this.handleChange}
-              value={body}
+              value={body}   
+              required           
             ></input>
           </label>
           <button onClick={this.handleSubmit}>Post Comment</button>
