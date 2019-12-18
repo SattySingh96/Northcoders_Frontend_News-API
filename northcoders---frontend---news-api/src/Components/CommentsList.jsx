@@ -18,7 +18,7 @@ class CommentsList extends Component {
       .then(comments => {
         this.setState({ comments, isLoading: false });
       })
-      .catch(({ data }) => {        
+      .catch(({response: { data } }) => {        
         this.setState({ err: data.err, isLoading: false });
       });
   };

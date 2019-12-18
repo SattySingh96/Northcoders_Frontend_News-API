@@ -7,18 +7,20 @@ class AddComment extends Component {
     body: ''
   };
 
-  handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value }, () => {});
+  handleChange = ({ target }) => {    
+      this.setState({ [target.name]: target.value }, () => {});     
   };
 
   handleSubmit = event => {
-    event.preventDefault();
-    api
+    event.preventDefault();    
+     if (this.state.body.length !== 0) {
+      api
       .postNewComment(this.props.article_id, { ...this.state })
-      .then(comment => {
+      .then(() => {
         this.setState({ username: this.props.username, body: "" });
         this.props.getComments();
       });
+     }    
   };
 
   render() {

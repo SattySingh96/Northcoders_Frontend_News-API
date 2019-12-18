@@ -17,7 +17,8 @@ class SingleTopic extends Component {
         this.setState({ articles, isLoading: false });
       })
       .catch(({ response: { data } }) => {
-        this.setState({ err: data.arr, isLoading: false });
+        console.log(data.err)
+        this.setState({ err: data.err, isLoading: false });
       });
   };
 
@@ -33,9 +34,10 @@ class SingleTopic extends Component {
 
   render() {
     const { err } = this.state;
+    if (err) return <ErrDisplayer err />;
     if (this.state.isLoading) return <Loader />;
     const { title } = this.state.articles;
-    if (err) return <ErrDisplayer />;
+    
     return (
       <div>
         <h2>{title}</h2>
