@@ -16,10 +16,12 @@ class SingleArticle extends Component {
     api
       .fetchArticle(this.props.article_id)
       .then(article => {
+        console.log("resolved");
         this.setState({ article, isLoading: false });
       })
       .catch(({ response: { data } }) => {
-        this.setState({ err: data.err, isLoading: false });
+        console.log(data);
+        this.setState({ err: data.msg, isLoading: false });
       });
   };
 
@@ -46,20 +48,20 @@ class SingleArticle extends Component {
       created_at,
       comment_count
     } = this.state.article;
-    if (err) return <ErrDisplayer err />;
+    if (err) return <ErrDisplayer err={err} />;
     return (
       <article>
         <h2>
           {article_id}.{title}
         </h2>
-        <Voter votes={votes} id={article_id} type={'articles'} />
+        <Voter votes={votes} id={article_id} type={"articles"} />
         <h3>Author: {author}</h3>
         <h3>Created: {created_at}</h3>
         <h3>Votes: {votes}</h3>
         <h3>Topic: {topic}</h3>
         <h2>{body}</h2>
-        <h3 >Comments: {comment_count}</h3>
-        <CommentsList article_id={article_id} username={this.props.username}/>
+        <h3>Comments: {comment_count}</h3>
+        <CommentsList article_id={article_id} username={this.props.username} />
       </article>
     );
   }
