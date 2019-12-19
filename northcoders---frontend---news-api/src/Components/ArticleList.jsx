@@ -39,10 +39,10 @@ class ArticleList extends Component {
     if (this.state.isLoading) return <Loader />;
     if (err) return <ErrDisplayer err />;
     return (
-      <div className='ArticleList'>         
+      <div className="ArticleList">
         {this.state.articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
-        })}       
+        })}
         <Router>
           <SingleArticle path=":article_id" />
         </Router>
