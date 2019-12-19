@@ -1,20 +1,13 @@
 const axios = require('axios')
 
-exports.fetchAllArticles = (topic) => {
+exports.fetchAllArticles = (topic, sort_by) => {
   return axios
-    .get('https://satnams-news-api.herokuapp.com/api/articles', { params: { topic } })
+    .get('https://satnams-news-api.herokuapp.com/api/articles', { params: { topic, sort_by } })
     .then(({ data: { articles } }) => {
       return articles;
     });
 }
 
-exports.sortAllArticles = (criteria)=> {
-  return axios
-    .get(`https://satnams-news-api.herokuapp.com/api/articles?sort_by=${criteria}`)
-    .then(({ data: { articles } }) => {
-      return articles;
-    });
-}
 
 exports.fetchArticle = (article_id) => {
   return axios
@@ -57,8 +50,8 @@ exports.deleteComment = (comment_id) => {
 
 exports.patchVotes = (path, id, vote) => {
   return axios
-    .patch(`https://satnams-news-api.herokuapp.com/api/${path}/${id}`, {'inc_votes': vote})
-    .then(({ data: { votes }} ) => {
+    .patch(`https://satnams-news-api.herokuapp.com/api/${path}/${id}`, { 'inc_votes': vote })
+    .then(({ data: { votes } }) => {
       return votes
     });
 }

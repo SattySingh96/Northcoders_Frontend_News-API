@@ -5,23 +5,33 @@ import SingleArticle from "./SingleArticle";
 import { Router } from "@reach/router";
 import Loader from "./Loader";
 import ErrDisplayer from "./ErrDisplayer";
+import Sorter from "./Sorter";
 
 class ArticleList extends Component {
   state = {
     articles: [],
     isLoading: true,
-    err: ""
+    err: "",
+    sortby: ""
   };
 
   getArticles = () => {
     api
-      .fetchAllArticles(this.props.topic_slug)
+      .fetchAllArticles(this.props.topic_slug, this.state.sortby)
       .then(articles => {
         this.setState({ articles, isLoading: false });
       })
       .catch(({ response: { data } }) => {
         this.setState({ err: data.err, isLoading: false });
       });
+  };
+
+  handleSortbyChange = criteria => {
+    console.log(criteria);
+    this.setState({ sortby: criteria }, () => {
+      console.log(this.state);
+      this.getArticles();
+    });
   };
 
   componentDidMount() {
@@ -40,6 +50,7 @@ class ArticleList extends Component {
     if (err) return <ErrDisplayer err />;
     return (
       <div className="ArticleList">
+        <Sorter handleSortbyChange={this.handleSortbyChange} />
         {this.state.articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}

@@ -2,12 +2,20 @@ import React from "react";
 import { Link } from "@reach/router";
 import Voter from "./Voter";
 
-const ArticleCard = ({ article_id, title, votes }) => {
+const ArticleCard = ({
+  article_id,
+  title,
+  votes,
+  comment_count,
+  created_at
+}) => {
   return (
     <article className="ArticleCard">
       <Link to={`/articles/${article_id}`}>
         <h2>{title}</h2>
       </Link>
+      <h2>{comment_count}</h2>
+      <h2>{created_at}</h2>
       <Voter id={article_id} type={"articles"} votes={votes} />
     </article>
   );

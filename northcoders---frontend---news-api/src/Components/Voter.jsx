@@ -10,7 +10,6 @@ class Voter extends Component {
 
   handleClick = event => {
     const { name } = event.target;
-    console.log(this.props.id, this.props.type, name);
     this.setState(currentState => {
       return {
         currentVote: currentState.currentVote + +name
@@ -32,11 +31,11 @@ class Voter extends Component {
     return (
       <div id="voter">
         <button onClick={this.handleClick} name="1" disabled={currentVote > 0}>
-          <i class="up"></i>
+          ▲
         </button>
         <h5>{this.props.votes + this.state.currentVote}</h5>
         <button onClick={this.handleClick} name="-1" disabled={currentVote < 0}>
-          <i class="down"></i>
+          ▼
         </button>
       </div>
     );
