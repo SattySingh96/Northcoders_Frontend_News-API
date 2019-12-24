@@ -30,11 +30,23 @@ class Voter extends Component {
     if (err) return <ErrDisplayer err={err} />;
     return (
       <div id="voter">
-        <button onClick={this.handleClick} name="1" disabled={currentVote > 0}>
+        <button
+          className="upVoteButton"
+          onClick={this.handleClick}
+          name="1"
+          disabled={currentVote > 0}
+        >
           ▲
         </button>
-        <h5>{this.props.votes + this.state.currentVote}</h5>
-        <button onClick={this.handleClick} name="-1" disabled={currentVote < 0}>
+        <h2 className="voteValue">
+          {this.props.votes + this.state.currentVote}
+        </h2>
+        <button
+          className="downVoteButton"
+          onClick={this.handleClick}
+          name="-1"
+          disabled={currentVote < 0}
+        >
           ▼
         </button>
       </div>

@@ -11,12 +11,17 @@ const ArticleCard = ({
 }) => {
   return (
     <article className="ArticleCard">
-      <Link to={`/articles/${article_id}`}>
+      <Link className="Link" to={`/articles/${article_id}`}>
         <h2>{title}</h2>
       </Link>
-      <h2>{comment_count}</h2>
-      <h2>{created_at}</h2>
-      <Voter id={article_id} type={"articles"} votes={votes} />
+      <h2 id="ArticleComments">Comments: {comment_count}</h2>
+      <h2>Created: {created_at.slice(0, 10)}</h2>
+      <Voter
+        className="ArticleCardVoter"
+        id={article_id}
+        type={"articles"}
+        votes={votes}
+      />
     </article>
   );
 };

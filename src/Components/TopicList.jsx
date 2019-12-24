@@ -2,17 +2,24 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import TopicCard from "./TopicCard";
 import Loader from "./Loader";
+import ErrDisplayer from "./ErrDisplayer";
 
 class TopicList extends Component {
   state = {
     topics: [],
-    isLoading: true
+    isLoading: true,
+    err: ""
   };
 
   getTopics = () => {
-    api.fetchAllTopics().then(topics => {
-      this.setState({ topics, isLoading: false });
-    });
+    api
+      .fetchAllTopics()
+      .then(topics => {
+        this.setState({ topics, isLoading: false });
+      })
+      .catch(({ response: { data } }) => {
+        this.setState({ err: data.msg, isLoading: false });
+      });
   };
 
   componentDidMount() {
@@ -26,10 +33,12 @@ class TopicList extends Component {
   }
 
   render() {
-    if (this.state.isLoading) return <Loader />;
+    const { err, isLoading, topics } = this.state;
+    if (isLoading) return <Loader />;
+    if (err) return <ErrDisplayer err={err} />;
     return (
       <div>
-        {this.state.topics.map(topic => {
+        {topics.map(topic => {
           return <TopicCard key={topic.slug} {...topic} />;
         })}
       </div>

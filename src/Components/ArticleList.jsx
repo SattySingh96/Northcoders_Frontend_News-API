@@ -22,7 +22,7 @@ class ArticleList extends Component {
         this.setState({ articles, isLoading: false });
       })
       .catch(({ response: { data } }) => {
-        this.setState({ err: data.err, isLoading: false });
+        this.setState({ err: data.msg, isLoading: false });
       });
   };
 
@@ -47,7 +47,7 @@ class ArticleList extends Component {
   render() {
     const { err } = this.state;
     if (this.state.isLoading) return <Loader />;
-    if (err) return <ErrDisplayer err />;
+    if (err) return <ErrDisplayer err={err} />;
     return (
       <div className="ArticleList">
         <Sorter handleSortbyChange={this.handleSortbyChange} />

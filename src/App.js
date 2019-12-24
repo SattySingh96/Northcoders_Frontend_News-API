@@ -17,20 +17,20 @@ class App extends Component {
 
   render() {
     return (
-    <div className="App">
-      <Header username={this.state.username}/>     
-      <Router>
-        <HomePage path='/'/>
-        <TopicList path='/topics/*' />
-        <ArticleList path='/articles/' />
-        <ArticleList path='/articles/topic/:topic_slug' />
-        <SingleArticle username={this.state.username} path='/articles/:article_id' />
-        <ArticleListByTopic path='/articles' />
-        <ErrDisplayer default />
-      </Router>
-    </div>
+      <div className="App">
+        <Header username={this.state.username} />
+        <Router>
+          <HomePage path='/' />
+          <TopicList path='/topics/*' />
+          <ArticleList path='/articles/' />
+          <ArticleList path='/articles/topic/:topic_slug' />
+          <SingleArticle username={this.state.username} path='/articles/:article_id' />
+          <ArticleListByTopic path='/articles' />
+          <ErrDisplayer default />
+        </Router>
+      </div>
     );
-  }  
+  }
 }
 
 export default App;
