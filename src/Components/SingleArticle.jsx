@@ -51,7 +51,8 @@ class SingleArticle extends Component {
     if (err) return <ErrDisplayer err={err} />;
     return (
       <article>
-        <h2>
+        <div className='ArticleContainer'>
+          <h2>
           {article_id}.{title}
         </h2>
         <Voter votes={votes} id={article_id} type={"articles"} />
@@ -60,6 +61,7 @@ class SingleArticle extends Component {
         <h3>Votes: {votes}</h3>
         <h3>Topic: {topic}</h3>
         <h2>{body}</h2>
+        </div>        
         <h3>Comments: {comment_count}</h3>
         <CommentsList article_id={article_id} username={this.props.username} />
       </article>

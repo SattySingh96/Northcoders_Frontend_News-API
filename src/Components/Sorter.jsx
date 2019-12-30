@@ -8,7 +8,7 @@ const Sorter = ({ handleSortbyChange }) => {
 
   return (
     <div>
-      <select onChange={handleSubmit}>
+      <select className='Sorter' onChange={handleSubmit}>
         <option value="created_at">Date</option>
         <option value="comment_count">Comments</option>
         <option value="votes">Votes</option>
