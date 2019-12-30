@@ -7,21 +7,30 @@ const ArticleCard = ({
   title,
   votes,
   comment_count,
-  created_at
+  created_at,
+  author
 }) => {
   return (
     <article className="ArticleCard">
+
+      <h2 id='ArticleAuthor'>Posted by {author} on {created_at.slice(0,10)}</h2>
+
       <Link className="Link" to={`/articles/${article_id}`}>
         <h2>{title}</h2>
-      </Link>
+      </Link>      
+
       <h2 id="ArticleComments">Comments: {comment_count}</h2>
-      <h2>Created: {created_at.slice(0, 10)}</h2>
-      <Voter
-        className="ArticleCardVoter"
+
+      <div className='ArticleCardVoter'>
+
+        <Voter        
         id={article_id}
         type={"articles"}
         votes={votes}
-      />
+      /> 
+
+      </div>  
+              
     </article>
   );
 };

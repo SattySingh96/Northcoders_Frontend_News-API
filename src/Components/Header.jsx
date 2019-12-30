@@ -6,8 +6,8 @@ const Header = ({username}) => {
   return (
     <div className='Header'>
       <Home />
-      <Nav />
-      Logged in as: {username}
+      <Nav />       
+      <h2>Logged in as: {username}</h2>    
     </div>
   );
 };
