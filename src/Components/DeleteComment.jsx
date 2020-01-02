@@ -12,9 +12,9 @@ const DeleteComment = ({ comment_id, getComments, author, username }) => {
     }       
   };
   return (
-    <div id='DeleteButton'>
-      <button onClick={handleSubmit}>Delete</button>
-    </div>
+   
+      <button id='DeleteButton' onClick={handleSubmit}>Delete</button>
+  
   );
 };
 

@@ -52,16 +52,13 @@ class SingleArticle extends Component {
     return (
       <article>
         <div className='ArticleContainer'>
-          <h2>
-          {article_id}.{title}
-        </h2>
-        <Voter votes={votes} id={article_id} type={"articles"} />
-        <h3>Author: {author}</h3>
-        <h3>Created: {created_at}</h3>
-        <h3>Votes: {votes}</h3>
-        <h3>Topic: {topic}</h3>
-        <h2>{body}</h2>
-        </div>        
+        <h3> Posted by {author.charAt(0).toUpperCase() + topic.slice(1)} on {created_at.slice(0,10)} in {topic.charAt(0).toUpperCase() + topic.slice(1)}</h3>       
+        <h1>{title}</h1>
+        <div className='SingleArticleVoter'>
+          <Voter votes={votes} id={article_id} type={"articles"} />  
+        </div>     
+        <p id='ArticleText'>{body}</p>              
+        </div>  
         <h3>Comments: {comment_count}</h3>
         <CommentsList article_id={article_id} username={this.props.username} />
       </article>

@@ -15,15 +15,14 @@ const CommentCard = ({
     <div id='CommentCard'>
       <ul>
         <li>
-          <strong>Comment written by {author}:</strong> {body} 
-          <strong>Votes: {votes}</strong>
+          <strong>{author} says:</strong> {body}               
+          <Voter votes={votes} id={comment_id} type={'comments'} />
           <DeleteComment 
           comment_id={comment_id} 
           getComments={getComments}    
           author={author}       
           username={username}
           />
-          <Voter votes={votes} id={comment_id} type={'comments'} />
         </li>
       </ul>
     </div>
