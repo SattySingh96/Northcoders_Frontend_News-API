@@ -37,7 +37,7 @@ class TopicList extends Component {
     if (isLoading) return <Loader />;
     if (err) return <ErrDisplayer err={err} />;
     return (
-      <div>
+      <div className='TopicList'>
         {topics.map(topic => {
           return <TopicCard key={topic.slug} {...topic} />;
         })}

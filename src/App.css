@@ -3,6 +3,10 @@
   background-color: lightgrey;
 }
 
+body {
+  background-color: lightgrey;
+}
+
 /* Header Styling - Start */
 .Header {
   display: grid;
@@ -60,16 +64,17 @@
 }
 .ArticleCard {
   display: block; 
-  height: 300px;
+  height: 250px;
   width: 60%;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.514) 4.5%, white 4.5% 90%);
   margin: auto;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
   border-radius: 10px; 
+  font-size: 100%;
 }
 .ArticleCardVoter {
  position: relative;
- top: -14%;
+ top: -28%;
  left: -47.6%;
 }
 .Link {
@@ -206,6 +211,24 @@ i {
 
 /* Article Comments Styling - Ends*/
 
+/* Topic List/Card Styling - Starts */
+.TopicList {
+  align-self: center;
+}
+.TopicCard {
+  display: block; 
+  height: 150px;
+  width: 60%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.514) 4.5%, white 4.5% 95.5%, rgba(255, 255, 255, 0.514) 4.5% 100%);
+  margin: auto;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  border-radius: 10px; 
+  font-size: 25px;
+}
+.Link{
+  text-decoration: none;
+}
+/* Topic List/Card Styling - Ends */
 
 #DeleteButton {
   all: unset;
