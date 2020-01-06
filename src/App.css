@@ -62,26 +62,43 @@ body {
   align-self: center;
 }
 .ArticleCard {
-  display: block;
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: 33% 33% 33%;
   height: 250px;
   width: 60%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.514) 4.5%,
-    white 4.5% 90%
-  );
-  margin: auto;
+  background-color: white;
+  margin: 20px 20px 20px 290px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   font-size: 100%;
 }
-.ArticleCardVoter {
+#ColorBlock1 {
+  grid-area: 1 / 1 / span 1 / span 1;
   position: relative;
-  top: -28%;
-  left: -47.6%;
+  background-color: rgb(228, 228, 228);
+  border-top-left-radius: 10px;
 }
-.Link {
+#ArticleCardVoter {
+  grid-area: 2 / 1 / span 1 / span 1;
+  position: relative;
+  background-color: rgb(228, 228, 228);
+}
+#ColorBlock2 {
+  grid-area: 3 / 1 / span 2 / span 1;
+  position: relative;
+  background-color: rgb(228, 228, 228);
+  border-bottom-left-radius: 10px;
+}
+#ArticleTitle {
   text-decoration: none;
+  grid-area: 1 / 2 / span 1 / span 1;
+}
+#ArticleAuthor {
+  grid-area: 2 / 2 / span 1 / span 1;
+}
+#ArticleCommentsValue {
+  grid-area: 3 / 2 / span 1 / span 1;
 }
 /* Article List/Card Styling - Ends */
 
@@ -196,7 +213,7 @@ i {
 #CommentCard {
   display: block;
   height: auto;
-  width: 100%;
+  width: 98.5%;
   background: linear-gradient(
     to right,
     rgb(255, 255, 255) 4.5%,
