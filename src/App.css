@@ -1,10 +1,9 @@
 .App {
   text-align: center;
-  background-color: lightgrey;
 }
 
 body {
-  background-color: lightgrey;
+  background-color: rgb(240, 240, 240);
 }
 
 /* Header Styling - Start */
@@ -58,20 +57,25 @@ body {
 /* Header Styling - Ends */
 
 /* Article List/Card Styling - Starts */
+
+/* REMEMBER - Place the title, author and comments text inside a div, then flex that div, and have it in teh grid area, next to voter*/
+
 .ArticleList {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .ArticleCard {
   display: grid;
   grid-template-columns: 5% 95%;
   grid-template-rows: 33% 33% 33%;
-  height: 250px;
+  height: auto;
   width: 60%;
   background-color: white;
-  margin: 20px 20px 20px 290px;
+  margin: 20px 20px 20px 20px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
-  font-size: 100%;
+  font-size: calc(10px + 1vmin);
 }
 #ColorBlock1 {
   grid-area: 1 / 1 / span 1 / span 1;
@@ -90,13 +94,21 @@ body {
   background-color: rgb(228, 228, 228);
   border-bottom-left-radius: 10px;
 }
-#ArticleTitle {
-  text-decoration: none;
+#ArticleAuthor {
   grid-area: 1 / 2 / span 1 / span 1;
 }
-#ArticleAuthor {
+
+#ArticleTitle h2 {
   grid-area: 2 / 2 / span 1 / span 1;
+  margin: 25px;
+  padding-left: 30px;
+  text-align: center;
 }
+
+#ArticleTitle {
+  text-decoration: none;
+}
+
 #ArticleCommentsValue {
   grid-area: 3 / 2 / span 1 / span 1;
 }
@@ -163,14 +175,11 @@ i {
 
 /* Sorter Dropdown Styling - Starts */
 .Sorter {
-  position: relative;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
   color: black;
   padding: 0.6% 1.4% 0.5% 0.8%;
-  width: 13%;
-  box-sizing: border-box;
   margin-top: 10px;
   margin-bottom: -10px;
   border: 1px solid #aaa;
@@ -182,36 +191,44 @@ i {
 
 /* Single Article Styling - Starts*/
 
-.ArticleContainer {
-  display: block;
-  height: auto;
+.SingleArticleContainer {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 10% 20% 70%;
   width: 60%;
   background: linear-gradient(
     to right,
     rgb(255, 255, 255) 4.5%,
     white 4.5% 90%
   );
-  margin: auto;
+  margin: 10px 10px 10px 250px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
-  font-size: 100%;
 }
 
-.SingleArticleVoter {
+#SingleArticleVoter {
+  grid-area: 2 / 1 / span 1 / span 1;
+}
+#PostedBy {
+  grid-area: 1 / 1 / span 2 / span 2;
+}
+#ArticleTitle {
+  grid-area: 2 / 1 / span 2 / span 2;
+}
+#ArticleText {
+  grid-area: 3 / 1 / span 2 / span 2;
   display: flex;
-  position: inherit;
-  width: 4%;
-  left: 92%;
-  top: -60px;
-  border-radius: 10%;
-  box-shadow: 1px 1px 3px rgb(153, 153, 153);
+  align-items: center;
+  color: red;
+  font-size: 10px;
 }
 
 /* Single Article Styling - Ends*/
 
 /* Article Comments Styling - Starts*/
 #CommentCard {
-  display: block;
+  display: grid;
+
   height: auto;
   width: 98.5%;
   background: linear-gradient(

@@ -23,7 +23,9 @@ const ArticleCard = ({
       <h2 id="ArticleCommentsValue">Comments: {comment_count}</h2>
 
       <div id="ColorBlock1"></div>
+
       <div id="ColorBlock2"></div>
+
       <div id="ArticleCardVoter">
         <Voter id={article_id} type={"articles"} votes={votes} />
       </div>

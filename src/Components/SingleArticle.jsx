@@ -51,14 +51,18 @@ class SingleArticle extends Component {
     if (err) return <ErrDisplayer err={err} />;
     return (
       <article>
-        <div className='ArticleContainer'>
-        <h3> Posted by {author.charAt(0).toUpperCase() + topic.slice(1)} on {created_at.slice(0,10)} in {topic.charAt(0).toUpperCase() + topic.slice(1)}</h3>       
-        <h1>{title}</h1>
-        <div className='SingleArticleVoter'>
-          <Voter votes={votes} id={article_id} type={"articles"} />  
-        </div>     
-        <p id='ArticleText'>{body}</p>              
-        </div>  
+        <div className="SingleArticleContainer">
+          <h3 id="PostedBy">
+            Posted by {author.charAt(0).toUpperCase() + topic.slice(1)} on{" "}
+            {created_at.slice(0, 10)} in{" "}
+            {topic.charAt(0).toUpperCase() + topic.slice(1)}
+          </h3>
+          <h1 id="ArticleTitle">{title}</h1>
+          <div id="SingleArticleVoter">
+            <Voter votes={votes} id={article_id} type={"articles"} />
+          </div>
+          <p id="ArticleText">{body}</p>
+        </div>
         <h3>Comments: {comment_count}</h3>
         <CommentsList article_id={article_id} username={this.props.username} />
       </article>
