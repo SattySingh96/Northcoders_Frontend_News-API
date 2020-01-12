@@ -35,7 +35,7 @@ class AddComment extends Component {
               onChange={this.handleChange}
               value={body}
               required
-              size="50"
+              size="40"
             ></input>
           </label>
           <button className="AddCommentButton" onClick={this.handleSubmit}>

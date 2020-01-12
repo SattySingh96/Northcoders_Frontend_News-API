@@ -12,14 +12,18 @@ body {
 
 /* Header Styling - Start */
 .Header {
+  position: -webkit-sticky;
   display: grid;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: 15% 60% 25%;
   grid-template-rows: 20%;
   background-color: white;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   padding: 3px;
-  width: 100%;
+  width: auto;
   font-size: 12px;
+}
+.Username{
+  font-size: calc(10px + 1vmin);
 }
 .Home {
   display: flex;
@@ -94,7 +98,7 @@ body {
   font-size: 12px;
 }
 .ArticleTitle {
-  font-size: 20px;
+  font-size: 17px;
   text-decoration: none;
 }
 .ArticleCardVoter {  

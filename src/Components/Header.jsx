@@ -7,7 +7,7 @@ const Header = ({username}) => {
     <div className='Header'>
       <Home />
       <Nav />       
-      <h2>Logged in as: {username}</h2>    
+      <h2 className='Username'>Logged in as: {username}</h2>    
     </div>
   );
 };
