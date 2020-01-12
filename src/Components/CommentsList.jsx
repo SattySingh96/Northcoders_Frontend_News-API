@@ -38,7 +38,7 @@ class CommentsList extends Component {
     if (this.state.isLoading) return <Loader />;
     if (err) return <ErrDisplayer err />;
     return (
-      <div>
+      <div className='CommentList'>
         <AddComment
           article_id={this.props.article_id}
           getComments={this.getComments}

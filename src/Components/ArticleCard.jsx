@@ -12,23 +12,23 @@ const ArticleCard = ({
 }) => {
   return (
     <article className="ArticleCard">
-      <h2 id="ArticleAuthor">
-        Posted by {author} on {created_at.slice(0, 10)}
-      </h2>
 
-      <Link id="ArticleTitle" to={`/articles/${article_id}`}>
-        <h2>{title}</h2>
-      </Link>
-
-      <h2 id="ArticleCommentsValue">Comments: {comment_count}</h2>
-
-      <div id="ColorBlock1"></div>
-
-      <div id="ColorBlock2"></div>
-
-      <div id="ArticleCardVoter">
-        <Voter id={article_id} type={"articles"} votes={votes} />
+      <div className='ArticleInfo'> 
+          <h2 id="ArticleAuthor">
+             Posted by {author} on {created_at.slice(0, 10)}
+          </h2>
+          <Link className="ArticleTitle" to={`/articles/${article_id}`}>
+             <h2>{title}</h2>
+          </Link>
+          <h2 id="ArticleCommentsValue">Comments: {comment_count}</h2>
       </div>
+
+      <div className='ArticleCardVotingSection'>
+          <div className="ArticleCardVoter">
+             <Voter id={article_id} type={"articles"} votes={votes} />
+          </div>   
+      </div>      
+
     </article>
   );
 };

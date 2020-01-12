@@ -12,19 +12,21 @@ const CommentCard = ({
   username
 }) => {
   return (
-    <div id='CommentCard'>
-      <ul>
-        <li>
-          <strong>{author} says:</strong> {body}               
-          <Voter votes={votes} id={comment_id} type={'comments'} />
-          <DeleteComment 
+    <div className='CommentCard'> 
+      <div className='CommentInfo'>
+        <strong>{author} says:</strong> {body} 
+        <DeleteComment 
           comment_id={comment_id} 
           getComments={getComments}    
           author={author}       
           username={username}
-          />
-        </li>
-      </ul>
+          />  
+      </div>
+      <div className='CommentVotingSection'>
+        <div className='CommentVoter'>
+          <Voter votes={votes} id={comment_id} type={'comments'} />
+        </div> 
+      </div>
     </div>
   );
 };

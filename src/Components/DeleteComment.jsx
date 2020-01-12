@@ -13,7 +13,7 @@ const DeleteComment = ({ comment_id, getComments, author, username }) => {
   };
   return (
    
-      <button id='DeleteButton' onClick={handleSubmit}>Delete</button>
+      <button className='DeleteButton' onClick={handleSubmit}>Delete</button>
   
   );
 };

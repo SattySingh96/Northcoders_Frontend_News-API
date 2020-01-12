@@ -26,10 +26,10 @@ class AddComment extends Component {
     return (
       <div>
         <form>
-          <label id="CommentLabel">
+          <label className="CommentLabel">
             Comment:
             <input
-              id="AddCommentBox"
+              className="AddCommentBox"
               type="text"
               name="body"
               onChange={this.handleChange}
@@ -38,7 +38,7 @@ class AddComment extends Component {
               size="50"
             ></input>
           </label>
-          <button id="AddCommentButton" onClick={this.handleSubmit}>
+          <button className="AddCommentButton" onClick={this.handleSubmit}>
             Post Comment
           </button>
         </form>
