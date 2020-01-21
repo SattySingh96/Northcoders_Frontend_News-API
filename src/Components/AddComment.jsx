@@ -27,7 +27,6 @@ class AddComment extends Component {
       <div>
         <form>
           <label className="CommentLabel">
-            Comment:
             <input
               className="AddCommentBox"
               type="text"

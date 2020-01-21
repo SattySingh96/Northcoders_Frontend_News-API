@@ -6,10 +6,6 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
-
-
-
-
 /* Header Styling - Start */
 .Header {
   position: -webkit-sticky;
@@ -22,7 +18,7 @@ body {
   width: auto;
   font-size: 12px;
 }
-.Username{
+.Username {
   font-size: calc(10px + 1vmin);
 }
 .Home {
@@ -62,11 +58,6 @@ body {
 }
 /* Header Styling - Ends */
 
-
-
-
-
-
 /* Article List/Card Styling - Starts */
 .ArticleList {
   display: flex;
@@ -82,14 +73,14 @@ body {
   background-color: white;
   margin: 20px 20px 20px 20px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-  border-radius: 10px;
+  border-radius: 15px;
   font-size: calc(10px + 1vmin);
 }
 .ArticleCardVotingSection {
   grid-area: 1 / 1 / span 2 / span 1;
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;  
+  align-items: center;
 }
 .ArticleInfo {
   display: flex;
@@ -101,19 +92,14 @@ body {
   font-size: 17px;
   text-decoration: none;
 }
-.ArticleCardVoter {  
+.ArticleCardVoter {
   position: relative;
   background-color: rgb(228, 228, 228);
   border: 0px solid black;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  border-radius: 10%;
+  border-radius: 10px;
 }
 /* Article List/Card Styling - Ends */
-
-
-
-
-
 
 /* Voter Button Styling - Starts */
 #voter {
@@ -130,15 +116,16 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 50%px;
   font-size: 30px;
   margin: 0px;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
+  border-radius: 10px;
 }
 .upVoteButton:hover {
   background-color: rgb(63, 170, 63);
   color: white;
+  border-radius: 10px;
 }
 .downVoteButton {
   background-color: rgba(255, 255, 255, 0);
@@ -148,15 +135,16 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 50%px;
   font-size: 30px;
   margin: 0px;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
+  border-radius: 10px;
 }
 .downVoteButton:hover {
   background-color: rgb(212, 78, 78);
   color: white;
+  border-radius: 10px;
 }
 i {
   border: solid black;
@@ -174,11 +162,6 @@ i {
 }
 /* Voter Button Styling - Ends */
 
-
-
-
-
-
 /* Sorter Dropdown Styling - Starts */
 .Sorter {
   font-size: 16px;
@@ -195,12 +178,8 @@ i {
 }
 /* Sorter Dropdown Styling - Ends */
 
-
-
-
-
 /* Single Article Styling - Starts*/
-.SingleArticle{
+.SingleArticle {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,13 +200,13 @@ i {
   grid-area: 1 / 2 / span 1 / span 1;
   display: flex;
   flex-direction: column;
-  align-items: center;    
+  align-items: center;
 }
 .SingleArticleCardVotingSection {
   grid-area: 1 / 1 / span 1 / span 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; 
+  align-items: flex-end;
   margin: 20px;
 }
 .SingleArticleVoter {
@@ -237,25 +216,21 @@ i {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   border-radius: 10%;
 }
-#PostedBy { 
-  font-size: 15px
+#PostedBy {
+  font-size: 15px;
 }
-#ArticleTitle {  
+#ArticleTitle {
   font-size: 30px;
 }
-#ArticleText {  
+#ArticleText {
   color: black;
   font-size: 20px;
   font-size-adjust: inherit;
 }
 /* Single Article Styling - Ends*/
 
-
-
-
-
 /* Single Article Comments Styling - Starts*/
-.CommentList{
+.CommentList {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -276,13 +251,13 @@ i {
   grid-area: 1 / 2 / span 1 / span 1;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 .CommentVotingSection {
   grid-area: 1 / 1 / span 1 / span 1;
   display: flex;
   flex-direction: row-reverse;
-  align-items: center; 
+  align-items: center;
 }
 .CommentVoter {
   position: relative;
@@ -333,57 +308,30 @@ i {
 }
 /* Single Article Comments Styling - Ends*/
 
-
-
-
-
-
 /* Topic List/Card Styling - Starts */
 .TopicList {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .TopicCard {
-  display: block;
-  height: 150px;
-  width: 60%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.514) 4.5%,
-    white 4.5% 95.5%,
-    rgba(255, 255, 255, 0.514) 4.5% 100%
-  );
-  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: auto;
+  width: 70%;
+  background-color: white;
+  margin: 20px 20px 20px 20px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
-  font-size: 25px;
+  font-size: calc(10px + 1vmin);
 }
 .Link {
   text-decoration: none;
 }
 /* Topic List/Card Styling - Ends */
 
-
-
-
-
-
-
-
 #DeleteButton:hover {
   background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
   background-color: #e9e9e9;
-}
-
-#TopicsCard {
-  border-style: solid;
-  border-width: 0.1px;
-  background-color: white;
-  width: 99.5%;
-}
-
-#CommentCard {
-  border-style: solid;
-  border-width: 0.1px;
-  background-color: white;
-  text-align: left;
 }
